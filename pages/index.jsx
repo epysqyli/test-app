@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { GitHub } from "react-feather";
 import SearchForm from "../components/SearchForm";
 
 const Home = () => {
@@ -10,9 +11,10 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="w-4/5 mx-auto ">
-        <div className="text-4xl font-medium text-center mt-5">
-          Github users search
+      <div className="w-4/5 mx-auto">
+        <div className="flex items-center justify-center gap-x-5 mt-5">
+          <GitHub color="gray" size={44} className="bg-gray-200 p-2 rounded-full" />
+          <div className="text-4xl font-medium">Github search</div>
         </div>
 
         <div className="mt-10">
