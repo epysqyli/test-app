@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { GitHub } from "react-feather";
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import UserResult from "../components/UserResult";
