@@ -30,9 +30,9 @@ const Home = () => {
         </div>
 
         {users ? (
-          <div>
+          <div className="mt-10">
             {users.map((user) => (
-              <div key={user.id}>
+              <div key={user.id} className="border">
                 <UserResult user={user} />
               </div>
             ))}
