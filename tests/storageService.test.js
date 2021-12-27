@@ -19,3 +19,10 @@ test("Username is included as a search keyword in localStorage history", () => {
   const storage = storageService.findOrCreateHistoryArray();
   expect(storage).toContain("john");
 });
+
+test("History is empty after cleanup", () => {
+  storageService.emptyHistory();
+  const res = storageService.findOrCreateHistoryArray();
+
+  expect(res.length).toBe(0);
+});
