@@ -1,13 +1,21 @@
-// Arrange
 const storageService = require("../lib/storageService");
 
 test("History array is created in localStorage if not present", () => {
-  // Act
-  storageService.createHistoryArray();
+  storageService.findOrCreateHistoryArray();
   const res = window.localStorage.getItem("history");
 
-  // Assert
   expect(res).not.toBeNull();
 });
 
-xtest("Keyword is included in localStorage history after search", () => {});
+test("History array is returned from localStorage if present", () => {
+  const res = storageService.findOrCreateHistoryArray();
+
+  expect(res).not.toBeNull();
+});
+
+test("Username is included as a search keyword in localStorage history", () => {
+  storageService.addToHistory("john");
+
+  const storage = storageService.findOrCreateHistoryArray();
+  expect(storage).toContain("john");
+});
