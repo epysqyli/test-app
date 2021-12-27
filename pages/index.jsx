@@ -1,7 +1,8 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SearchBar from "../components/SearchBar";
 import UserResult from "../components/UserResult";
+import { useRouter } from "next/router";
 
 const Home = () => {
   const [users, setUsers] = useState(null);
@@ -9,6 +10,11 @@ const Home = () => {
   const updateUsers = (usersResult) => {
     setUsers(usersResult);
   };
+
+  const router = useRouter();
+  useEffect(() => {
+    const username = router.query.username;
+  }, []);
 
   return (
     <div>
