@@ -20,12 +20,7 @@ const Home = () => {
       </Head>
 
       <div className="w-4/5 mx-auto">
-        <div className="flex items-center justify-center gap-x-5 mt-10">
-          <GitHub size={48} className="bg-gray-50 p-2 rounded-full shadow-md" />
-          <div className="text-4xl font-medium">Github search</div>
-        </div>
-
-        <div className="mt-12">
+        <div className="mt-12 mx-auto md:w-4/6 lg:w-3/6">
           <SearchBar updateUsers={updateUsers} />
         </div>
 
