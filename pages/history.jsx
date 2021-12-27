@@ -47,13 +47,6 @@ const History = () => {
           ))}
         </div>
       ) : null}
-
-      <div className="mt-20 flex items-center justify-around w-4/5 md:w-3/6 lg:w-2/6 mx-auto">
-        <div className="text-center text-3xl text-gray-800">Cached results</div>
-        <div className="cursor-pointer hover:scale-105 active:scale-125">
-          <Trash2 color="gray" size={28} strokeWidth={1.5} />
-        </div>
-      </div>
     </div>
   );
 };
