@@ -7,7 +7,7 @@ const SearchForm = () => {
         type="text"
         name="tmp"
         id="tmp"
-        className="border-none bg-white w-5/6 rounded-tl-lg rounded-bl-lg focus:ring-0 group-hover:shadow-md transition py-2"
+        className="border-none bg-white w-5/6 rounded-tl-lg rounded-bl-lg focus:outline-none group-hover:shadow-md transition py-2 px-5"
         required
       />
 
