@@ -1,4 +1,5 @@
 import { Search } from "react-feather";
+import apiCalls from "../lib/apiCalls";
 
 const SearchForm = () => {
   return (
