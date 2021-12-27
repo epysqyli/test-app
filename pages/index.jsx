@@ -3,6 +3,7 @@ import { GitHub } from "react-feather";
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import UserResult from "../components/UserResult";
+import Link from "next/link";
 
 const Home = () => {
   const [users, setUsers] = useState(null);
@@ -30,11 +31,13 @@ const Home = () => {
         </div>
 
         {users ? (
-          <div className="mt-10">
+          <div className="my-10 w-11/12 grid gap-y-1 md:grid-cols-2 md:gap-x-6 lg:grid-cols-3 mx-auto ">
             {users.map((user) => (
-              <div key={user.id} className="border">
-                <UserResult user={user} />
-              </div>
+              <Link href="#" passHref={true} key={user.id}>
+                <div className="my-2 p-2 shadow-md rounded-md hover:shadow-lg cursor-pointer bg-gray-100 active:bg-gray-200">
+                  <UserResult user={user} />
+                </div>
+              </Link>
             ))}
           </div>
         ) : null}
