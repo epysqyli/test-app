@@ -24,7 +24,7 @@ const Home = () => {
         </div>
 
         {users ? (
-          <div className="my-10 w-11/12 grid gap-y-1 md:grid-cols-2 md:gap-x-6 lg:grid-cols-3 mx-auto ">
+          <div className="my-10 w-11/12 grid gap-y-1 md:grid-cols-2 md:gap-x-6 lg:grid-cols-3 mx-auto">
             {users.map((user) => (
               <a
                 href={user.html_url}
