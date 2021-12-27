@@ -20,6 +20,14 @@ test("Username is included as a search keyword in localStorage history", () => {
   expect(storage).toContain("john");
 });
 
+test("Already present keyword is not added to history", () => {
+  storageService.addToHistory("john");
+
+  const storage = storageService.findOrCreateHistoryArray();
+  const count = storage.filter((item) => item == "john");
+  expect(count.length).toBe(1);
+})
+
 test("History is empty after cleanup", () => {
   storageService.emptyHistory();
   const res = storageService.findOrCreateHistoryArray();
