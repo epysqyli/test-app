@@ -32,7 +32,7 @@ const History = () => {
           className="cursor-pointer hover:scale-105 active:scale-125"
           onClick={cleanHistory}
         >
-          <Trash2 color="gray" />
+          <Trash2 color="gray" size={28} strokeWidth={1.5} />
         </div>
       </div>
       {history ? (
