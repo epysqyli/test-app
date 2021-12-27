@@ -20,7 +20,7 @@ const Home = () => {
       </Head>
 
       <div className="w-4/5 mx-auto">
-        <div className="mt-12 mx-auto md:w-4/6 lg:w-3/6">
+        <div className="mx-auto md:w-4/6 lg:w-3/6">
           <SearchBar updateUsers={updateUsers} />
         </div>
 

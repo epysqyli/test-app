@@ -26,7 +26,7 @@ const SearchBar = ({ updateUsers }) => {
         onKeyPress={handleKeyPress}
         onChange={handleChange}
         className="border-none bg-white w-5/6 rounded-tl-lg rounded-bl-lg focus:outline-none group-hover:shadow-md transition py-2 px-5"
-        placeholder="Search for any github user by username"
+        placeholder="Search for any github user"
         required
       />
 
