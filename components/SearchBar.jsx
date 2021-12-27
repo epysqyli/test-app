@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Search } from "react-feather";
 import apiCalls from "../lib/apiCalls";
+import storageService, { addToHistory } from "../lib/storageService";
 
 const SearchBar = ({ updateUsers }) => {
   const [username, setUsername] = useState(null);
@@ -17,6 +18,7 @@ const SearchBar = ({ updateUsers }) => {
   const searchUsers = async () => {
     const users = await apiCalls.searchByUsername(username);
     updateUsers(users.data.items);
+    addToHistory(username);
   };
 
   return (
