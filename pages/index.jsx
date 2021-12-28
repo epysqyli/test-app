@@ -5,16 +5,14 @@ import UserResult from "../components/UserResult";
 import { useRouter } from "next/router";
 
 const Home = () => {
+  const router = useRouter();
+
   const [users, setUsers] = useState(null);
+  const [usernameParam, setUsernameParam] = useState(router.query.username || "");
 
   const updateUsers = (usersResult) => {
     setUsers(usersResult);
   };
-
-  const router = useRouter();
-  useEffect(() => {
-    const username = router.query.username;
-  }, []);
 
   return (
     <div>
@@ -26,7 +24,7 @@ const Home = () => {
 
       <div className="w-4/5 mx-auto">
         <div className="mx-auto md:w-4/6 lg:w-3/6">
-          <SearchBar updateUsers={updateUsers} />
+          <SearchBar updateUsers={updateUsers} cachedQuery={usernameParam} />
         </div>
 
         {users ? (

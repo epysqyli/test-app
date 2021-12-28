@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Search } from "react-feather";
 import { searchByUsername } from "../lib/apiCalls";
 import { addToHistory } from "../lib/storageService";
 
-const SearchBar = ({ updateUsers }) => {
+const SearchBar = ({ updateUsers, cachedQuery }) => {
   const [username, setUsername] = useState(null);
 
   const handleChange = (e) => {
@@ -16,10 +16,15 @@ const SearchBar = ({ updateUsers }) => {
   };
 
   const searchUsers = async () => {
+    if (cachedQuery) username = cachedQuery;
     const users = await searchByUsername(username);
     updateUsers(users.data.items);
     addToHistory(username);
   };
+
+  useEffect(() => {
+    if (cachedQuery) searchUsers();
+  }, []);
 
   return (
     <div className="flex group rounded-md shadow-md">
