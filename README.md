@@ -36,3 +36,8 @@ Le keywords recenti vengono salvate su localStorage per permetterne la persisten
 occupano della gestione di questo processo sono raccolti in lib/storageService. In particolare, le keywords vengono
 aggiunte in un array all'interno di localStorage denominato "history" ogni volta che una ricerca viene avviata tramite il metodo
 addToHistory() in SearchBar.jsx.
+
+Si accede alla pagina "history" tramite il footer. In questa pagina vengono elencate le parole chiave cercate di recente. Cliccando su
+una di esse si viene riportati alla pagina "index", la mostra il risultato in cache della ricerca.
+
+"History" permette tramite l'icona a forma di cestino di pulire la cronologia di ricerca e risultati in cache.
