@@ -28,13 +28,12 @@ const History = () => {
 
   return (
     <div>
-      <div className="flex items-center justify-around w-4/5 md:w-3/6 lg:w-2/6 mx-auto rounded-md py-3 shadow bg-gray-100">
+      <div className="flex items-center justify-around w-4/5 md:w-3/6 lg:w-2/6 mx-auto rounded-md py-3 bg-gray-100 shadow-md">
         <div className="text-center text-3xl text-gray-800">
           Latest keywords
         </div>
-        <div className="cursor-pointer border-l-2 pl-5" onClick={cleanHistory}>
+        <div className="cursor-pointer pl-5" onClick={cleanHistory}>
           <Trash2
-            color="gray"
             size={28}
             strokeWidth={1.5}
             className="hover:scale-105 active:scale-110"
@@ -49,7 +48,7 @@ const History = () => {
               passHref={true}
               key={index}
             >
-              <div className="bg-gray-100 rounded-md shadow text-gray-800 animate-show-up">
+              <div className="rounded-md shadow text-white animate-show-up bg-pewter-blue hover:bg-dark-pewter-blue active:bg-ming">
                 <Keyword historyItem={entry} />
               </div>
             </Link>

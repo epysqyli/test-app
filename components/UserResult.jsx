@@ -14,9 +14,9 @@ const UserResult = ({ user }) => {
           className="rounded-md"
         />
       </div>
-      <div className="text-lg text-center break-words text-gray-800 w-3/5">{user.login}</div>
+      <div className="text-lg text-center break-words text-white w-3/5">{user.login}</div>
       <ArrowUpRight
-        color="gray"
+        color="white"
         size={20}
         className="group-hover:scale-125 transition-transform w-1/5"
       />

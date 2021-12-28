@@ -38,7 +38,7 @@ const Home = () => {
                 rel="noopener noreferrer"
                 key={user.id}
               >
-                <div className="my-2 p-2 shadow-md rounded-md hover:shadow-lg cursor-pointer bg-gray-100 active:bg-gray-200 animate-show-up">
+                <div className="my-2 p-2 shadow-md rounded-md hover:shadow-lg cursor-pointer bg-pewter-blue hover:bg-dark-pewter-blue active:bg-ming animate-show-up">
                   <UserResult user={user} />
                 </div>
               </a>

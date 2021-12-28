@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 
 const Footer = () => {
   const baseFooter = (text) => (
-    <div className="flex items-center justify-center gap-x-5 p-10 group cursor-pointer border-t hover:bg-gray-200 active:bg-gray-300">
+    <div className="flex items-center justify-center gap-x-5 p-10 group cursor-pointer border-t bg-gainsboro hover:bg-light-gray active:bg-silver-sand">
       <div className="text-gray-700">{text}</div>
       <ArrowUpRight
         color="gray"
