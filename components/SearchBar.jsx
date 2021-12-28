@@ -4,7 +4,7 @@ import { searchByUsername } from "../lib/apiCalls";
 import { addToHistory } from "../lib/storageService";
 
 const SearchBar = ({ updateUsers, cachedQuery }) => {
-  const [username, setUsername] = useState(null);
+  const [username, setUsername] = useState(cachedQuery || "");
 
   const handleChange = (e) => {
     const newUsername = e.target.value;
@@ -12,7 +12,6 @@ const SearchBar = ({ updateUsers, cachedQuery }) => {
   };
 
   const searchUsers = async () => {
-    if (cachedQuery) username = cachedQuery;
     const users = await searchByUsername(username);
     updateUsers(users.data.items);
     addToHistory(username);
@@ -25,7 +24,10 @@ const SearchBar = ({ updateUsers, cachedQuery }) => {
   };
 
   useEffect(() => {
-    if (cachedQuery) searchUsers();
+    if (username) {
+      searchUsers();
+      setUsername("");
+    }
   }, []);
 
   return (
