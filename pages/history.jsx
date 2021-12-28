@@ -28,15 +28,17 @@ const History = () => {
 
   return (
     <div>
-      <div className="flex items-center justify-around w-4/5 md:w-3/6 lg:w-2/6 mx-auto">
+      <div className="flex items-center justify-around w-4/5 md:w-3/6 lg:w-2/6 mx-auto rounded-md py-3 shadow bg-gray-100">
         <div className="text-center text-3xl text-gray-800">
           Latest keywords
         </div>
-        <div
-          className="cursor-pointer hover:scale-105 active:scale-125"
-          onClick={cleanHistory}
-        >
-          <Trash2 color="gray" size={28} strokeWidth={1.5} />
+        <div className="cursor-pointer border-l-2 pl-5" onClick={cleanHistory}>
+          <Trash2
+            color="gray"
+            size={28}
+            strokeWidth={1.5}
+            className="hover:scale-105 active:scale-110"
+          />
         </div>
       </div>
       {history ? (
