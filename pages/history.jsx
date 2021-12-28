@@ -3,6 +3,7 @@ import Keyword from "../components/Keyword";
 import { Trash2 } from "react-feather";
 import { emptyHistory, deleteCachedResults } from "../lib/storageService";
 import Link from "next/link";
+import Head from "next/head";
 
 const History = () => {
   const [history, setHistory] = useState(null);
@@ -28,6 +29,12 @@ const History = () => {
 
   return (
     <div>
+      <Head>
+        <title>Search history</title>
+        <meta name="history" content="Custom search history" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <div className="flex items-center justify-around w-4/5 md:w-3/6 lg:w-2/6 mx-auto rounded-md py-3 bg-gray-100 shadow-md">
         <div className="text-center text-3xl text-gray-800">
           Latest keywords
