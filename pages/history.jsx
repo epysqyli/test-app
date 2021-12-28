@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Keyword from "../components/Keyword";
 import { Trash2 } from "react-feather";
-import { emptyHistory } from "../lib/storageService";
+import { emptyHistory, deleteCachedResults } from "../lib/storageService";
 import Link from "next/link";
 
 const History = () => {
@@ -15,6 +15,9 @@ const History = () => {
   const cleanHistory = () => {
     // empties localStorage
     emptyHistory();
+
+    // empties cache
+    deleteCachedResults();
 
     // updates component history state
     const hst = JSON.parse(localStorage.getItem("history"));
