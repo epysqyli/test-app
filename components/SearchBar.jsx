@@ -11,10 +11,6 @@ const SearchBar = ({ updateUsers, cachedQuery }) => {
     setUsername(newUsername);
   };
 
-  const handleKeyPress = (e) => {
-    if (e.key == "Enter") searchUsers();
-  };
-
   const searchUsers = async () => {
     if (cachedQuery) username = cachedQuery;
     const users = await searchByUsername(username);
@@ -22,29 +18,34 @@ const SearchBar = ({ updateUsers, cachedQuery }) => {
     addToHistory(username);
   };
 
+  const submitForm = (e) => {
+    e.preventDefault();
+
+    searchUsers();
+  };
+
   useEffect(() => {
     if (cachedQuery) searchUsers();
   }, []);
 
   return (
-    <div className="flex group rounded-md shadow-md">
+    <form className="flex group rounded-md shadow-md" onSubmit={submitForm}>
       <input
         type="text"
-        onKeyPress={handleKeyPress}
         onChange={handleChange}
         className="border-none bg-white w-5/6 rounded-tl-lg rounded-bl-lg focus:outline-none group-hover:shadow-md transition py-2 px-5"
         placeholder="Search for any github user"
+        minLength={1}
         required
       />
 
       <button
         type="submit"
-        onClick={searchUsers}
         className="w-1/6 text-center bg-white border-l rounded-tr-lg rounded-br-lg hover:bg-gray-200 group-hover:shadow-md transition active:bg-gray-400 active:text-white"
       >
         <Search size={20} className="mx-auto" color="gray" />
       </button>
-    </div>
+    </form>
   );
 };
 
