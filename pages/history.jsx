@@ -40,7 +40,7 @@ const History = () => {
         </div>
       </div>
       {history ? (
-        <div className="my-10 w-11/12 grid grid-cols-2 gap-x-6 gap-y-3 md:grid-cols-2 md:gap-x-6 lg:grid-cols-3 mx-auto">
+        <div className="my-10 w-11/12 grid grid-cols-2 gap-x-6 gap-y-3 md:grid-cols-2 md:gap-x-6 lg:grid-cols-3 xl:grid-cols-4 mx-auto">
           {history.map((entry, index) => (
             <Link
               href={{ pathname: "/", query: { username: entry } }}

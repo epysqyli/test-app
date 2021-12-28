@@ -8,7 +8,9 @@ const Home = () => {
   const router = useRouter();
 
   const [users, setUsers] = useState(null);
-  const [usernameParam, setUsernameParam] = useState(router.query.username || "");
+  const [usernameParam, setUsernameParam] = useState(
+    router.query.username || ""
+  );
 
   const updateUsers = (usersResult) => {
     setUsers(usersResult);
@@ -28,7 +30,7 @@ const Home = () => {
         </div>
 
         {users ? (
-          <div className="my-10 w-11/12 grid gap-y-1 md:grid-cols-2 md:gap-x-6 lg:grid-cols-3 mx-auto">
+          <div className="my-10 w-11/12 grid gap-y-1 md:grid-cols-2 md:gap-x-6 lg:grid-cols-3 xl:grid-cols-4 mx-auto">
             {users.map((user) => (
               <a
                 href={user.html_url}
