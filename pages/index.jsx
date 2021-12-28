@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import UserResult from "../components/UserResult";
 import { useRouter } from "next/router";
