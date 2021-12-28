@@ -47,7 +47,7 @@ const History = () => {
               passHref={true}
               key={index}
             >
-              <div className="bg-gray-100 rounded-md shadow text-gray-800">
+              <div className="bg-gray-100 rounded-md shadow text-gray-800 animate-show-up">
                 <Keyword historyItem={entry} />
               </div>
             </Link>
