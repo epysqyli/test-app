@@ -13,3 +13,6 @@ L'applicazione permette la ricerca di utenti github tramite [l'api ufficiale](ht
 Nello specifico, la ricerca avviene tramite username di login.
 
 # Struttura
+
+L'app si presenta su due pagine, "index" e "history".
+"Index" e' la pagina principale ed ospita una barra di ricerca
